@@ -19,7 +19,7 @@ function Navbar() {
   return (
     <nav style={styles.nav}>
       <div style={styles.navContent}>
-        <h1 style={styles.title}>💰 Expense Tracker</h1>
+        <h1 style={styles.title}>💰 Application</h1>
         <div style={styles.userSection}>
           <span style={styles.email}>{email}</span>
           <button onClick={handleLogout} style={styles.logoutButton}>
