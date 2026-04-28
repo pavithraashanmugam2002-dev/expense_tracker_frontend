@@ -31,6 +31,13 @@ function FinancialSummary() {
     }
   }
 
+  const formatCurrency = (amount: number): string => {
+    return amount.toLocaleString('en-US', {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    })
+  }
+
   if (loading) {
     return (
       <div style={styles.container}>
@@ -55,15 +62,15 @@ function FinancialSummary() {
       <div style={styles.summaryGrid}>
         <div style={{ ...styles.card, ...styles.incomeCard }}>
           <div style={styles.cardLabel}>Total Income</div>
-          <div style={styles.cardValue}>${summary.total_income.toFixed(2)}</div>
+          <div style={styles.cardValue}>${formatCurrency(summary.total_income)}</div>
         </div>
         <div style={{ ...styles.card, ...styles.expenseCard }}>
           <div style={styles.cardLabel}>Total Expenses</div>
-          <div style={styles.cardValue}>${summary.total_expenses.toFixed(2)}</div>
+          <div style={styles.cardValue}>${formatCurrency(summary.total_expenses)}</div>
         </div>
         <div style={{ ...styles.card, ...styles.balanceCard }}>
           <div style={styles.cardLabel}>Balance</div>
-          <div style={styles.cardValue}>${summary.balance.toFixed(2)}</div>
+          <div style={styles.cardValue}>${formatCurrency(summary.balance)}</div>
         </div>
       </div>
     </div>
